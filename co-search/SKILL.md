@@ -38,8 +38,8 @@ Honor user constraints exactly: journal set, date window, disease, cell type, sp
    **中：** 按纳入/排除标准筛选题目和摘要。
 4. **EN:** Extract a literature matrix.  
    **中：** 提取文献矩阵。
-5. **EN:** Classify papers by mechanism, model, omics strategy, validation style, and article routine.  
-   **中：** 按机制、模型、组学策略、验证方式和文章套路分类。
+5. **EN:** Classify papers by mechanism, model, node-discovery experiment, omics strategy, validation style, and article routine.  
+   **中：** 按机制、模型、节点发现实验、组学策略、验证方式和文章套路分类。
 6. **EN:** Pick representative papers for each class.  
    **中：** 为每一类选择代表论文。
 7. **EN:** Save a report and ask the user to choose a class when used inside `$co-manager`.  
@@ -54,6 +54,7 @@ Read `references/search_and_classification.md` for schemas and dimensions.
 - Cell type, tissue, organ, or model system / 细胞类型、组织、器官或模型系统。
 - Molecular axis or pathway / 分子轴或通路。
 - Omics or public-data strategy / 组学或公共数据策略。
+- Node-discovery experiment: how the paper discovers downstream molecules, mechanism nodes, or phenotype-linked mediators / 节点发现实验：论文如何发现下游分子、机制节点或表型关联介质。
 - Experimental validation ladder / 实验验证阶梯。
 - Figure logic and article routine / 图版逻辑和文章套路。
 - Novelty move: target, cell state, dataset integration, intervention, disease framing / 创新动作：新靶点、新细胞状态、新数据整合、新干预或新疾病框架。

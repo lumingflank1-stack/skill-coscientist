@@ -29,12 +29,12 @@ co-search -> user chooses class -> co-distill -> co-topic -> user chooses topic
 
 - **EN:** Use `$co-search` for literature retrieval, screening, classification, and literature matrices.  
   **中：** 用 `$co-search` 做文献检索、筛选、分类和文献矩阵。
-- **EN:** Use `$co-distill` to reverse engineer the selected paper class into a reusable article routine.  
-  **中：** 用 `$co-distill` 从选定文献类别中反推可复用文章套路。
+- **EN:** Use `$co-distill` to reverse engineer the selected paper class into a reusable article routine, including the node-discovery experiment that finds downstream mechanism molecules or phenotype-linked mediators.  
+  **中：** 用 `$co-distill` 从选定文献类别中反推可复用文章套路，并提取发现下游机制分子或表型关联介质的节点发现实验。
 - **EN:** Use `$co-topic` to generate, critique, and rank research topics from the distilled routine.  
   **中：** 用 `$co-topic` 基于蒸馏套路生成、反驳和排序课题。
-- **EN:** Use `$co-plan` to design public-data analyses, datasets, wet-lab validation, next-round decisions, and virtual-result prompts.  
-  **中：** 用 `$co-plan` 设计公共数据分析、所需数据集、湿实验验证、下一轮决策和虚拟结果 prompt。
+- **EN:** Use `$co-plan` to design public-data analyses, node-discovery experiments, wet-lab validation, next-round decisions, and virtual-result prompts.  
+  **中：** 用 `$co-plan` 设计公共数据分析、节点发现实验、湿实验验证、下一轮决策和虚拟结果 prompt。
 - **EN:** Use `$co-result` only after results are available or after the user explicitly requests prompt-directed virtual positive results.  
   **中：** 只有在已有结果或用户明确要求按 prompt 生成虚拟阳性结果时，才调用 `$co-result`。
 - **EN:** Use `$co-method` after Results are drafted so Methods align to actual result panels.  
@@ -67,7 +67,7 @@ Stop for user choice unless the user explicitly says to continue automatically.
 
 1. After `$co-search`: choose one literature class / 在 `$co-search` 后选择一个文献类别。
 2. After `$co-topic`: choose one main topic or request revision / 在 `$co-topic` 后选择主课题或要求重写。
-3. After every `$co-plan` round: choose public-data analysis, experiment, or virtual-result simulation / 每轮 `$co-plan` 后选择公共数据分析、实验或虚拟结果模拟。
+3. After every `$co-plan` round: choose public-data analysis, node-discovery experiment, validation experiment, or virtual-result simulation / 每轮 `$co-plan` 后选择公共数据分析、节点发现实验、验证实验或虚拟结果模拟。
 4. Before `$co-result` generates virtual positive results, confirm the literature/public-data feasibility and novelty rationale, the closest prior work, and the selected positive result axis that is both plausible and maximally innovative / `$co-result` 生成虚拟阳性结果前，确认文献/公共数据可行性和创新性解释、最接近既往工作，以及既可能成立又最有创新性的阳性结果轴。
 5. Before final manuscript assembly, confirm the source ledger exists for any simulation-only major claim / 组装全文前，确认任何仅基于模拟的重要 claim 都已有来源账本记录。
 
@@ -75,14 +75,18 @@ Stop for user choice unless the user explicitly says to continue automatically.
 
 1. **EN:** Record the planned claim, required evidence, and falsification criteria before analyzing.  
    **中：** 分析前记录计划中的 claim、所需证据和证伪标准。
-2. **EN:** Inspect available files before writing code.  
+2. **EN:** Record which step is discovering the node and which step is validating the node.  
+   **中：** 记录哪一步是在发现节点，哪一步是在验证节点。
+3. **EN:** For validation steps, record decisive assays such as conditional knockout, mass-spectrometry confirmation, SPR/BLI/ITC interaction detection, rescue, and phenotype readouts when relevant.  
+   **中：** 对验证步骤，在相关时记录关键实验，如条件性敲除、质谱确认、SPR/BLI/ITC 互作检测、rescue 和表型读出。
+4. **EN:** Inspect available files before writing code.  
    **中：** 写代码前先检查可用文件。
-3. **EN:** Save scripts, figures, tables, and interpretation under `round_##/`.  
+5. **EN:** Save scripts, figures, tables, and interpretation under `round_##/`.  
    **中：** 将脚本、图、表和解释报告保存到 `round_##/`。
-4. **EN:** Classify each result as strong support, moderate support, weak support, neutral, contradictory, or not interpretable.  
+6. **EN:** Classify each result as strong support, moderate support, weak support, neutral, contradictory, or not interpretable.  
    **中：** 将每个结果归类为强支持、中等支持、弱支持、中性、矛盾或不可解释。
-5. **EN:** Revise the hypothesis and call `$co-plan` for the next dataset, experiment, or virtual-result prompt.  
-   **中：** 修正假说，并调用 `$co-plan` 设计下一步数据集、实验或虚拟结果 prompt。
+7. **EN:** Revise the hypothesis and call `$co-plan` for the next dataset, node-discovery experiment, validation experiment, or virtual-result prompt.  
+   **中：** 修正假说，并调用 `$co-plan` 设计下一步数据集、节点发现实验、验证实验或虚拟结果 prompt。
 
 Never force a positive narrative when a result is neutral or contradictory.  
 当结果中性或矛盾时，不要强行写成正向故事。

@@ -58,6 +58,10 @@ co-search -> user selects class -> co-distill -> co-topic -> user selects topic
 
 **中文：** 当用户要求虚拟或假设阳性结果时，除非用户已经固定结果轴，否则先做一轮简洁的文献、公共数据可行性和创新性扫描；选择既高度可能成立、又最有创新性，且在已扫描文献中未见直接同构研究的结果轴；在 `virtual_result_rationale.md` 或 `assumed_result_explanation.md` 中记录最接近既往工作、创新性差异和剩余不确定性。虚拟结果状态只记录在 Markdown 报告和来源账本中，不在每段正文、每个表格或每条图注里反复标注。
 
+**English:** For mechanism papers, preserve two evidence jobs even when the new topic does not mechanically copy the source routine: (1) node-discovery experiments that find downstream molecules, mechanism nodes, or phenotype-linked mediators, and (2) validation experiments that prove the selected node. Validation plans should explicitly consider decisive assays such as conditional knockout, tissue/cell-specific knockout, mass-spectrometry confirmation, SPR/BLI/ITC molecular interaction assays, Co-IP/CETSA/DARTS, rescue, and phenotype readouts.
+
+**中文：** 对机制论文，即使新课题不生硬模仿来源套路，也必须保留两类证据功能：1）节点发现实验，用来发现下游分子、机制节点或表型关联介质；2）节点验证实验，用来证明被选中的节点。验证计划应明确考虑关键实验，例如条件性敲除、组织/细胞特异性敲除、质谱确认、SPR/BLI/ITC 分子互作检测、Co-IP/CETSA/DARTS、rescue 和表型读出。
+
 ## When To Use / 什么时候使用
 
 **English:** Use this skill when you want Codex to:
@@ -66,8 +70,9 @@ co-search -> user selects class -> co-distill -> co-topic -> user selects topic
 - Compare several competing hypotheses instead of giving one answer.
 - Critique correlation, confounding, and alternative explanations.
 - Design single-cell, bulk RNA-seq, multi-omics, or pathway analyses.
+- Design node-discovery experiments that identify downstream molecules, mechanism nodes, or phenotype-linked mediators.
 - Interpret analysis results and revise mechanisms.
-- Design wet-lab validation, perturbation, rescue, or translational experiments.
+- Design wet-lab validation, perturbation, rescue, mass-spectrometry, molecular interaction, or translational experiments.
 - Frame a project as a manuscript, grant, or figure plan.
 
 **中文：** 当你希望 Codex 做下面这些事时使用：
@@ -76,8 +81,9 @@ co-search -> user selects class -> co-distill -> co-topic -> user selects topic
 - 同时比较多个竞争性假说，而不是只给一个结论。
 - 主动质疑相关性、混杂因素和替代解释。
 - 设计单细胞、bulk RNA-seq、多组学或通路分析。
+- 设计发现下游分子、机制节点或表型关联介质的节点实验。
 - 根据分析结果解释证据，并修正机制假说。
-- 设计湿实验验证、扰动、rescue 或转化实验。
+- 设计湿实验验证、扰动、rescue、质谱、分子互作或转化实验。
 - 把课题整理成论文、基金或图版逻辑。
 
 ## How To Trigger / 如何触发

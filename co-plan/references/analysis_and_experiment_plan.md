@@ -43,12 +43,28 @@ Download status values:
 ```markdown
 # Experiment Plan
 
+## Node Discovery Experiment
+
+- Biological question:
+- Starting contrast or perturbation:
+- Model or sample:
+- Discovery assay:
+- Data type:
+- Candidate node selection rule:
+- Expected downstream molecule/mechanism/phenotype node:
+- Required controls:
+- Failure or ambiguity mode:
+
 ## Decisive Experiment
 
 - Model:
 - Samples:
 - Perturbation:
+- Conditional knockout or tissue/cell-specific knockout:
+- Mass-spectrometry detection or confirmation:
 - Rescue:
+- Direct interaction assay:
+- SPR/BLI/ITC molecular interaction assay:
 - Stimulation:
 - Controls:
 - Time points:
@@ -59,6 +75,16 @@ Download status values:
 - Technical risks:
 - Backup plan:
 ```
+
+Node discovery and validation are different evidence jobs:
+
+- Node discovery finds the downstream molecule, mechanism node, or phenotype-linked mediator. Examples include RNA-seq/scRNA-seq/spatial omics after perturbation, proteomics, phosphoproteomics, secretomics, metabolomics, IP-MS/pull-down-MS, CRISPR/RNAi screen, perturb-seq, target fishing, and phenotype-linked imaging or flow screens.
+- Validation tests the selected node. Important examples include conditional knockout or tissue/cell-specific knockout, knockdown/overexpression, rescue, neutralization, inhibitor/agonist, mass-spectrometry detection or confirmation such as targeted MS/PRM/SRM, Co-IP-MS, IP-MS or pull-down-MS confirmation, SPR/BLI/ITC molecular interaction assays, Co-IP, CETSA/DARTS, reporter assays, and phenotype rescue.
+
+节点发现和验证是两个不同证据功能：
+
+- 节点发现负责找到下游分子、机制节点或表型关联介质，例如扰动后的 RNA-seq/scRNA-seq/空间组学、蛋白组、磷酸化组、分泌组、代谢组、IP-MS/pull-down-MS、CRISPR/RNAi screen、perturb-seq、target fishing，以及表型关联成像或流式筛选。
+- 验证负责检验被选中的节点，重要例子包括条件性敲除或组织/细胞特异性敲除、敲低/过表达、rescue、中和、抑制剂/激动剂、质谱检测或确认如 targeted MS/PRM/SRM、Co-IP-MS、IP-MS 或 pull-down-MS 确认、SPR/BLI/ITC 分子互作检测、Co-IP、CETSA/DARTS、报告基因和表型 rescue。
 
 ## Virtual Result Prompt
 
@@ -77,6 +103,9 @@ Research topic:
 Active hypothesis:
 Desired result mode: positive / negative / ambiguous / mixed
 Assays to simulate:
+Node-discovery experiments to simulate:
+Validation experiments to simulate:
+Required decisive validation assays: conditional knockout / mass spectrometry / SPR-BLI-ITC / rescue / phenotype readout / other
 Groups:
 Replicates:
 Expected direction:

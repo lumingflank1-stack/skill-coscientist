@@ -13,8 +13,14 @@
 - Evidence tier:
 - Public datasets needed:
 - Bioinformatics tests:
+- Node-discovery experiments:
 - Expected figure plan:
 - Decisive experiment:
+- Validation experiments:
+  - Conditional knockout or tissue/cell-specific knockout, if causal in vivo claim is intended:
+  - Mass-spectrometry validation, if the node is a protein complex, target, post-translational modification, secreted factor, or metabolite:
+  - SPR/BLI/ITC molecular interaction assay, if direct binding is claimed:
+  - Rescue or phenotype readout:
 - Falsification criteria:
 - Alternative explanation:
 - Reviewer concern:
@@ -32,13 +38,34 @@ Score each numeric criterion from 1 to 5.
 
 `topic_id,dataset_type,preferred_database,accession_if_known,species,tissue_or_cell_type,comparison,required_metadata,why_needed,minimum_success_condition`
 
+## Node Discovery Plan
+
+For each topic, specify how the downstream mechanism molecule, node, or phenotype-linked mediator will be found. Do not only list validation assays.
+
+```markdown
+### Node Discovery for <topic_id>
+
+- Starting perturbation or contrast:
+- Discovery assay: transcriptomics / proteomics / phosphoproteomics / secretomics / metabolomics / IP-MS / pull-down-MS / CRISPR screen / perturb-seq / spatial screen / ligand-receptor screen / target-fishing / other
+- Samples or model:
+- Candidate selection rule:
+- Expected node type:
+- Orthogonal shortlist check:
+- How this differs from direct validation:
+```
+
 ## Experiment Needs
 
 For each topic:
 
 - Model.
+- Node-discovery experiment.
 - Perturbation.
+- Conditional knockout or tissue/cell-specific knockout, if relevant.
+- Mass-spectrometry detection or confirmation, if relevant.
+- SPR/BLI/ITC molecular interaction detection, if relevant.
 - Rescue, if causal claim is intended.
+- Direct interaction assay, if physical binding is claimed.
 - Controls.
 - Readouts.
 - Expected support result.
