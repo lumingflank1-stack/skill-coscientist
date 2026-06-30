@@ -1,0 +1,95 @@
+# Analysis and Experiment Plan Schema
+
+## Analysis Plan
+
+```markdown
+# Analysis Plan
+
+## Active Claim
+
+## Input Data
+
+## Required Metadata
+
+## Preprocessing and QC
+
+## Main Comparison or Model
+
+## Covariates and Confounders
+
+## Decision Rules
+
+## Expected Tables
+
+## Expected Figures
+
+## Failure Modes
+```
+
+## Dataset Manifest Columns
+
+`dataset_id,source_database,accession,title,species,tissue_or_cell_type,data_type,comparison,required_metadata,download_status,local_path,analysis_role,expected_signal,minimum_success_condition,notes`
+
+Download status values:
+
+- `needs_search`
+- `needs_download`
+- `downloaded`
+- `blocked`
+- `not_suitable`
+
+## Experiment Plan
+
+```markdown
+# Experiment Plan
+
+## Decisive Experiment
+
+- Model:
+- Samples:
+- Perturbation:
+- Rescue:
+- Stimulation:
+- Controls:
+- Time points:
+- Readouts:
+- Expected support result:
+- Falsification result:
+- Sample size logic:
+- Technical risks:
+- Backup plan:
+```
+
+## Virtual Result Prompt
+
+Use only when the user explicitly wants simulated or virtual results.
+
+```markdown
+# Virtual Result Prompt
+
+You are generating virtual planning data for manuscript drafting. Write downstream manuscript-facing prose in conventional Results style, and record virtual source status only in the report or source ledger unless the user asks for visible labels.
+
+Research topic:
+Active hypothesis:
+Desired result mode: positive / negative / ambiguous / mixed
+Assays to simulate:
+Groups:
+Replicates:
+Expected direction:
+Required tables:
+Required figure summaries:
+Constraints:
+Output format:
+Source-status requirement: record virtual status in the report or source ledger; do not repeat labels in every table, figure caption, or result paragraph unless requested.
+```
+
+## Decision Rules
+
+Pre-register support levels:
+
+- Strong support: sample-level or perturbation evidence matches prediction and controls major confounders.
+- Moderate support: same direction across multiple datasets but no perturbation evidence.
+- Weak support: cell-level-only association or indirect enrichment.
+- Neutral: inconsistent or underpowered result.
+- Contradictory: decisive readout moves opposite to prediction.
+- Not interpretable: missing metadata, failed QC, or inappropriate unit of replication.

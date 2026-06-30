@@ -1,10 +1,26 @@
-# Biomedical Co-Scientist Skill / 生物医学 Co-Scientist 技能
+# Co-Paper Skills / 论文协作 Skill 集
 
 ## Overview / 概览
+
+**English:** `co-paper skills` is the overall skill collection for interactive biomedical paper ideation, evidence planning, result writing, methods drafting, and manuscript assembly.
+
+**中文：** `co-paper skills` 是这套互动式生物医学论文构思、证据规划、结果撰写、方法撰写和全文组装工作流的总 skill 集名称。
+
+**English:** This collection supersedes the earlier single `co-scientist` style skill. The recommended entry point is now `$co-manager`; `biomedical-co-scientist` is kept as a lower-level hypothesis and interpretation engine for compatibility.
+
+**中文：** 这个 skill 集用于替代原来单一的 `co-scientist` 风格 skill。现在推荐入口是 `$co-manager`；`biomedical-co-scientist` 保留为底层假说生成和结果解释引擎，以便兼容已有用法。
 
 **English:** `biomedical-co-scientist` is a Codex skill for biomedical research reasoning. It helps Codex generate competing mechanistic hypotheses, critique them, rank them, design bioinformatics analyses, interpret results conservatively, revise hypotheses, and propose wet-lab and translational validation plans.
 
 **中文：** `biomedical-co-scientist` 是一个用于生物医学科研推理的 Codex skill。它帮助 Codex 生成竞争性机制假说、审稿式反驳、假说排序、设计生信分析、保守解释结果、迭代修正假说，并进一步提出实验验证和转化研究方案。
+
+**English:** `co-method` is a Codex skill for drafting concise Chinese biomedical Methods sections from an abstract and results. It requires internet verification for specific reagents, antibodies, primer sequences, shRNA/siRNA/sgRNA target sequences, instruments, software versions, numbered software citations, catalog numbers, companies, and countries when those details are needed.
+
+**中文：** `co-method` 是一个根据论文摘要和结果用中文精简撰写生物医学论文“材料与方法”的 Codex skill。它默认联网优先从中国公司补全特异性试剂、抗体、qPCR 引物、shRNA/siRNA/sgRNA 靶向序列、细胞系、仪器、软件版本、R 包/软件编号文献引用、货号、公司和国家，并按医学论文和 Nature-style 可复现写法输出。
+
+**English:** `co-manager` is the upper-level interactive paper workflow. It coordinates `co-search`, `co-distill`, `co-topic`, `co-plan`, `co-result`, `co-method`, and `co-discussion` to move from literature search to classified paper routines, topic generation, public-data or experiment rounds, Results, Methods, Introduction, Discussion, and full manuscript assembly.
+
+**中文：** `co-manager` 是上层互动式论文工作流。它负责协调 `co-search`、`co-distill`、`co-topic`、`co-plan`、`co-result`、`co-method` 和 `co-discussion`，从文献检索分类开始，经过文章套路蒸馏、课题生成、公共数据或实验迭代、结果撰写、方法撰写、引言/讨论撰写，最后拼成全文。
 
 ## Core Workflow / 核心流程
 
@@ -18,6 +34,14 @@ Generate -> Debate -> Rank -> Test -> Analyze -> Revise -> Translate
 
 ```text
 提出假说 -> 反驳假说 -> 排序假说 -> 设计验证 -> 分析数据 -> 修正假说 -> 转化应用
+```
+
+**Co-Manager paper workflow / Co-Manager 论文工作流：**
+
+```text
+co-search -> user selects class -> co-distill -> co-topic -> user selects topic
+-> co-plan -> analysis or experiment rounds -> co-result -> co-method
+-> co-discussion -> full manuscript
 ```
 
 ## When To Use / 什么时候使用
@@ -64,6 +88,25 @@ You can also describe the task naturally:
 用 biomedical-co-scientist skill 分析这个现象，并提出可证伪的机制假说和生信验证方案。
 ```
 
+For Methods drafting:
+
+Methods 部分撰写可这样触发：
+
+```text
+Use $co-method 根据下面的摘要和结果，用中文精简撰写材料与方法；联网优先从中国公司补齐抗体、qPCR 引物、siRNA/shRNA、细胞系、试剂、仪器、软件版本和 R 包/软件的编号文献引用。
+```
+
+For the full interactive paper workflow:
+
+完整互动式论文工作流可这样触发：
+
+```text
+Use $co-manager
+
+Topic seed: macrophage metabolism and osteoarthritis
+Goal: 先调用 co-search 检索近两年文献并分类；我选择一类后，再调用 co-distill 蒸馏文章套路，调用 co-topic 生成可复刻套路的新课题，调用 co-plan 给出公共数据集、生信分析计划和实验计划。每一轮都保存报告、表格和必要图片/图片提示。最后根据真实或我明确要求的虚拟结果调用 co-result、co-method、co-discussion，并拼成全文。
+```
+
 ## Recommended Test Prompt / 推荐测试 Prompt
 
 **English:**
@@ -84,6 +127,17 @@ Use $biomedical-co-scientist
 Project: FICT1 in simulated inflammatory macrophage activation
 Observation: 在一个虚拟单细胞数据集中，虚构基因 FICT1 在刺激后的巨噬细胞中上调，并与 MOCK2、ANTIGEN-A、ANTIGEN-B 正相关；proxy perturbation 分析提示 MOCK2 可能是下游候选。
 Goal: 请生成 5 个竞争性机制假说。每个假说都要包含证据、漏洞、替代解释、生信验证、关键证伪标准、实验验证和转化价值，并给出排序表。
+```
+
+**Co-Method test prompt / Co-Method 测试 Prompt：**
+
+```text
+Use $co-method
+
+Task: 根据下面虚构论文的摘要和结果撰写 Methods。
+Abstract: FICT1 knockdown attenuated inflammatory activation in a simulated macrophage model.
+Results: (1) FICT1 shRNA reduced FICT1 mRNA and protein expression. (2) LPS-induced IL6 and TNF expression decreased after FICT1 knockdown. (3) Immunofluorescence showed reduced nuclear p65 signal. (4) RNA-seq identified downregulation of NF-kappaB-related genes.
+Requirements: 用中文精简撰写材料与方法；默认只输出正文、软件参考文献和高风险需作者核对；联网优先搜索中国官方供应商/厂家页面；抗体优先武汉三鹰/Proteintech，qPCR 引物优先上海生工生物，细胞系优先中科院上海细胞库，常规试剂优先正能生物等中国供应商；抗体、引物、siRNA/shRNA 序列、试剂盒、仪器、软件在物品后用括号写货号/公司/国家/版本；R 包或软件用 [1]、[2] 形式编号引用相关方法论文或官方 citation；没有现成序列时给出设计候选序列。
 ```
 
 ## Data Analysis Prompt / 数据分析 Prompt
@@ -107,6 +161,16 @@ Use $biomedical-co-scientist
 ## Repository Layout / 仓库结构
 
 ```text
+co-method/
+├── SKILL.md
+├── agents/
+│   └── openai.yaml
+└── references/
+    ├── medical_methods_format.md
+    ├── output_templates.md
+    ├── reagent_search.md
+    └── software_citation.md
+
 biomedical-co-scientist/
 ├── SKILL.md
 ├── agents/
@@ -117,6 +181,19 @@ biomedical-co-scientist/
 │   └── iteration_translation.md
 └── scripts/
     └── scaffold_report.py
+
+co-manager/
+├── SKILL.md
+├── agents/
+├── references/
+└── scripts/
+
+co-search/
+co-distill/
+co-topic/
+co-plan/
+co-result/
+co-discussion/
 ```
 
 **English:**
@@ -126,6 +203,18 @@ biomedical-co-scientist/
 - `references/bioinformatics_analysis.md`: Bioinformatics analysis patterns and decision rules.
 - `references/iteration_translation.md`: Result interpretation, hypothesis revision, validation, translation, and manuscript framing.
 - `scripts/scaffold_report.py`: Creates a reusable report scaffold for a project.
+- `co-method/SKILL.md`: Main workflow for concise Chinese biomedical Methods drafting.
+- `co-method/references/reagent_search.md`: Internet-search rules for exact reagents, sequences, catalog numbers, companies, and countries.
+- `co-method/references/software_citation.md`: Numbered citation rules for R packages, software, databases, and command-line tools.
+- `co-method/references/medical_methods_format.md`: Medical/Nature-style Methods structure and reproducibility rules.
+- `co-method/references/output_templates.md`: Concise Chinese draft skeletons, indexes, ledgers, and reusable prompt.
+- `co-manager/SKILL.md`: Upper-level orchestration for multi-round literature-to-paper workflows.
+- `co-search/SKILL.md`: Literature retrieval, screening, classification, and representative paper selection.
+- `co-distill/SKILL.md`: Paper-routine distillation from a selected literature class.
+- `co-topic/SKILL.md`: Topic and hypothesis generation from a distilled routine.
+- `co-plan/SKILL.md`: Public dataset, bioinformatics, experiment, and virtual-result prompt planning.
+- `co-result/SKILL.md`: Results writing from input results or explicitly requested simulated results.
+- `co-discussion/SKILL.md`: Literature-backed Introduction and Discussion writing with numbered citations.
 
 **中文：**
 
@@ -134,6 +223,18 @@ biomedical-co-scientist/
 - `references/bioinformatics_analysis.md`：生信分析模式和判断标准。
 - `references/iteration_translation.md`：结果解释、假说修正、实验验证、转化和论文基金框架。
 - `scripts/scaffold_report.py`：为项目生成可复用的报告骨架。
+- `co-method/SKILL.md`：中文精简撰写材料与方法的主流程。
+- `co-method/references/reagent_search.md`：联网核对试剂、序列、货号、公司和国家的规则。
+- `co-method/references/software_citation.md`：R 包、软件、数据库和命令行工具的编号文献引用规则。
+- `co-method/references/medical_methods_format.md`：医学论文和 Nature-style Methods 结构与可复现写法。
+- `co-method/references/output_templates.md`：中文精简草稿骨架、索引表、证据表和可复用 prompt。
+- `co-manager/SKILL.md`：多轮“文献到论文”工作流总控。
+- `co-search/SKILL.md`：文献检索、筛选、分类和代表论文选择。
+- `co-distill/SKILL.md`：从选定文献类别中蒸馏文章套路。
+- `co-topic/SKILL.md`：基于蒸馏套路生成课题和假说。
+- `co-plan/SKILL.md`：规划公共数据集、生信分析、实验验证和虚拟结果 prompt。
+- `co-result/SKILL.md`：基于输入结果或明确要求的模拟结果撰写 Results。
+- `co-discussion/SKILL.md`：先调研文献，再用编号引用撰写 Introduction 和 Discussion。
 
 ## Report Scaffold Script / 报告骨架脚本
 
@@ -165,18 +266,47 @@ The script creates:
 - `evidence_ledger.csv`
 - `prioritization.csv`
 
+**Co-Manager project scaffold / Co-Manager 项目骨架：**
+
+```bash
+python co-manager/scripts/scaffold_project.py \
+  --project "macrophage metabolism OA paper" \
+  --out outputs/co_manager/macrophage-metabolism-oa \
+  --rounds 2
+```
+
+This creates state ledgers, stage folders, round folders, and a manuscript folder.
+
+该脚本会生成状态记录、阶段目录、迭代轮次目录和 manuscript 目录。
+
 ## Installation / 安装
 
 **English:** This repository is designed as a Codex skill folder. To install globally, copy the skill directory into `~/.codex/skills/`:
 
 ```bash
 cp -R biomedical-co-scientist ~/.codex/skills/biomedical-co-scientist
+cp -R co-method ~/.codex/skills/co-method
+cp -R co-manager ~/.codex/skills/co-manager
+cp -R co-search ~/.codex/skills/co-search
+cp -R co-distill ~/.codex/skills/co-distill
+cp -R co-topic ~/.codex/skills/co-topic
+cp -R co-plan ~/.codex/skills/co-plan
+cp -R co-result ~/.codex/skills/co-result
+cp -R co-discussion ~/.codex/skills/co-discussion
 ```
 
 **中文：** 这个仓库是 Codex skill 文件夹。全局安装时，将 skill 目录复制到 `~/.codex/skills/`：
 
 ```bash
 cp -R biomedical-co-scientist ~/.codex/skills/biomedical-co-scientist
+cp -R co-method ~/.codex/skills/co-method
+cp -R co-manager ~/.codex/skills/co-manager
+cp -R co-search ~/.codex/skills/co-search
+cp -R co-distill ~/.codex/skills/co-distill
+cp -R co-topic ~/.codex/skills/co-topic
+cp -R co-plan ~/.codex/skills/co-plan
+cp -R co-result ~/.codex/skills/co-result
+cp -R co-discussion ~/.codex/skills/co-discussion
 ```
 
 ## Validation / 验证
@@ -187,6 +317,30 @@ cp -R biomedical-co-scientist ~/.codex/skills/biomedical-co-scientist
 UV_CACHE_DIR=/tmp/uv-skill-validate-cache \
 uv run --with pyyaml \
 python ~/.codex/skills/.system/skill-creator/scripts/quick_validate.py biomedical-co-scientist
+UV_CACHE_DIR=/tmp/uv-skill-validate-cache \
+uv run --with pyyaml \
+python ~/.codex/skills/.system/skill-creator/scripts/quick_validate.py co-method
+UV_CACHE_DIR=/tmp/uv-skill-validate-cache \
+uv run --with pyyaml \
+python ~/.codex/skills/.system/skill-creator/scripts/quick_validate.py co-manager
+UV_CACHE_DIR=/tmp/uv-skill-validate-cache \
+uv run --with pyyaml \
+python ~/.codex/skills/.system/skill-creator/scripts/quick_validate.py co-search
+UV_CACHE_DIR=/tmp/uv-skill-validate-cache \
+uv run --with pyyaml \
+python ~/.codex/skills/.system/skill-creator/scripts/quick_validate.py co-distill
+UV_CACHE_DIR=/tmp/uv-skill-validate-cache \
+uv run --with pyyaml \
+python ~/.codex/skills/.system/skill-creator/scripts/quick_validate.py co-topic
+UV_CACHE_DIR=/tmp/uv-skill-validate-cache \
+uv run --with pyyaml \
+python ~/.codex/skills/.system/skill-creator/scripts/quick_validate.py co-plan
+UV_CACHE_DIR=/tmp/uv-skill-validate-cache \
+uv run --with pyyaml \
+python ~/.codex/skills/.system/skill-creator/scripts/quick_validate.py co-result
+UV_CACHE_DIR=/tmp/uv-skill-validate-cache \
+uv run --with pyyaml \
+python ~/.codex/skills/.system/skill-creator/scripts/quick_validate.py co-discussion
 ```
 
 **中文：** 使用 Codex 的 skill creator validator 验证：
@@ -195,6 +349,30 @@ python ~/.codex/skills/.system/skill-creator/scripts/quick_validate.py biomedica
 UV_CACHE_DIR=/tmp/uv-skill-validate-cache \
 uv run --with pyyaml \
 python ~/.codex/skills/.system/skill-creator/scripts/quick_validate.py biomedical-co-scientist
+UV_CACHE_DIR=/tmp/uv-skill-validate-cache \
+uv run --with pyyaml \
+python ~/.codex/skills/.system/skill-creator/scripts/quick_validate.py co-method
+UV_CACHE_DIR=/tmp/uv-skill-validate-cache \
+uv run --with pyyaml \
+python ~/.codex/skills/.system/skill-creator/scripts/quick_validate.py co-manager
+UV_CACHE_DIR=/tmp/uv-skill-validate-cache \
+uv run --with pyyaml \
+python ~/.codex/skills/.system/skill-creator/scripts/quick_validate.py co-search
+UV_CACHE_DIR=/tmp/uv-skill-validate-cache \
+uv run --with pyyaml \
+python ~/.codex/skills/.system/skill-creator/scripts/quick_validate.py co-distill
+UV_CACHE_DIR=/tmp/uv-skill-validate-cache \
+uv run --with pyyaml \
+python ~/.codex/skills/.system/skill-creator/scripts/quick_validate.py co-topic
+UV_CACHE_DIR=/tmp/uv-skill-validate-cache \
+uv run --with pyyaml \
+python ~/.codex/skills/.system/skill-creator/scripts/quick_validate.py co-plan
+UV_CACHE_DIR=/tmp/uv-skill-validate-cache \
+uv run --with pyyaml \
+python ~/.codex/skills/.system/skill-creator/scripts/quick_validate.py co-result
+UV_CACHE_DIR=/tmp/uv-skill-validate-cache \
+uv run --with pyyaml \
+python ~/.codex/skills/.system/skill-creator/scripts/quick_validate.py co-discussion
 ```
 
 ## Scientific Guardrails / 科学约束

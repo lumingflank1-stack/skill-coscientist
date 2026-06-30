@@ -1,0 +1,4 @@
+interface:
+  display_name: "Co-Discussion"
+  short_description: "Write cited introduction and discussion sections"
+  default_prompt: "Use $co-discussion to research literature and draft numbered-citation Introduction and Discussion sections from Results."

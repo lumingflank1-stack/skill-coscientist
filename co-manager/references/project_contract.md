@@ -1,0 +1,74 @@
+# Co-Manager Project Contract
+
+Use this reference when creating a project workspace, continuing an iterative round, or assembling the final manuscript.
+
+## Folder Contract
+
+```text
+project_slug/
+├── project_state.md
+├── decision_log.md
+├── evidence_ledger.csv
+├── source_mode_ledger.csv
+├── 01_search/
+├── 02_distill/
+├── 03_topics/
+├── 04_plan/
+├── round_01/
+│   ├── plan/
+│   ├── scripts/
+│   ├── figures/
+│   ├── tables/
+│   └── interpretation_and_revision.md
+├── round_02/
+└── manuscript/
+    ├── results.md
+    ├── methods.md
+    ├── introduction.md
+    ├── discussion.md
+    ├── references_numbered.md
+    └── full_manuscript.md
+```
+
+## Evidence Ledger Columns
+
+`id,stage,claim,evidence_type,source,source_detail,evidence_tier,direction,confidence,limitations,next_action`
+
+Evidence types:
+
+- `literature`
+- `public_dataset`
+- `local_analysis`
+- `wet_lab`
+- `virtual_simulated`
+- `database_annotation`
+- `computational_inference`
+- `unresolved`
+
+## Source Mode Ledger Columns
+
+`result_id,stage,figure_panel,claim,source_mode,input_file_or_source,simulation_status,allowed_in_manuscript,notes`
+
+Use `allowed_in_manuscript=draft_with_source_note` for virtual results when the manuscript-facing prose should read like a conventional paper draft, and keep the virtual status in `source_mode_ledger.csv` or the Markdown report.
+
+## Decision Log Template
+
+```markdown
+## Decision YYYY-MM-DD Round N
+
+- Decision:
+- Options considered:
+- Reason:
+- Evidence used:
+- What this enables:
+- What remains uncertain:
+```
+
+## Final Assembly Checklist
+
+- Results claims have source modes.
+- Methods map to every Results panel.
+- Introduction cites prior work and does not overclaim novelty.
+- Discussion addresses rival explanations and boundaries.
+- References are numbered consistently.
+- Virtual results are recorded in state files, source ledgers, or final notes even when manuscript-facing prose uses conventional Results style.

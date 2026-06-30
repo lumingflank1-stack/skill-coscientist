@@ -1,0 +1,42 @@
+{
+  "workbook_title": "Example co-result simulated workbook",
+  "decimal_places": 4,
+  "sheets": [
+    {
+      "name": "RawData_Needs",
+      "columns": ["Figure_panel", "Claim", "Needs_raw_data", "Required_real_data"],
+      "rows": [
+        ["Figure 1A", "Mechanistic schematic", "No numeric raw data", "Literature or domain rationale"],
+        ["Figure 1B", "Protein signal is enriched in assay-positive group", "Yes", "Original image and replicate-level densitometry"]
+      ]
+    },
+    {
+      "name": "Example_Assay_Data",
+      "columns": ["sample_id", "group", "replicate", "normalized_signal"],
+      "rows": [
+        ["S01", "control", 1, 0.1200],
+        ["S02", "control", 2, 0.1210],
+        ["S03", "control", 3, 0.1190],
+        ["S04", "positive", 1, 1.4100],
+        ["S05", "positive", 2, 1.4200],
+        ["S06", "positive", 3, 1.4150]
+      ]
+    },
+    {
+      "name": "Figure_Data_Map",
+      "columns": ["Figure_panel", "Workbook_sheet", "Main_columns", "What_to_replace_with_real_data"],
+      "rows": [
+        ["Figure 1B", "Example_Assay_Data", "normalized_signal", "Measured replicate-level values"]
+      ]
+    }
+  ],
+  "variance_checks": [
+    {
+      "sheet": "Example_Assay_Data",
+      "group_by": ["group"],
+      "value_column": "normalized_signal",
+      "min_sd": 0.0200,
+      "nonnegative": true
+    }
+  ]
+}

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Co-Result"
+  short_description: "Write results, figures, legends, and mock data"
+  default_prompt: "Use $co-result to draft Chinese manuscript Results, create figure prompts, identify raw-data needs, and export simulated Excel data."
