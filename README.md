@@ -24,16 +24,6 @@
 
 ## Core Workflow / 核心流程
 
-**English:**
-
-```text
-Generate -> Debate -> Rank -> Test -> Analyze -> Revise -> Translate
-```
-
-**中文：**
-
-```text
-提出假说 -> 反驳假说 -> 排序假说 -> 设计验证 -> 分析数据 -> 修正假说 -> 转化应用
 ```
 
 **Co-Manager paper workflow / Co-Manager 论文工作流：**
