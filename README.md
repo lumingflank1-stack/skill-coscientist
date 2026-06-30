@@ -54,9 +54,9 @@ co-search -> user selects class -> co-distill -> co-topic -> user selects topic
 
 **中文：** 对完整 Results 包、虚拟结果包、假设结果全文包和 `$co-manager` 全文组装，`$co-result` 默认调用可用图片生成路径（可用时使用 `imagegen` / GPT Image 2）生成完整 multi-panel PNG 图。若图片生成不可用或受阻，则保存 `figure_generation_prompts.md` 和 `figure_generation_blockers.md`。
 
-**English:** When virtual or assumed positive results are requested, first perform a compact literature and public-data feasibility review unless the user fixes the result axis. Choose the most plausible positive result axis, generate the result package from that axis, and save `virtual_result_rationale.md` or `assumed_result_explanation.md`. Virtual-result status is recorded in Markdown reports and source ledgers, not repeated in every paragraph, table, or figure legend.
+**English:** When virtual or assumed positive results are requested, first perform a compact literature, public-data feasibility, and novelty scan unless the user fixes the result axis. Choose the result axis that is both highly plausible and maximally innovative, with no directly equivalent prior study found in the scanned literature; record closest prior work, the novelty difference, and remaining uncertainty in `virtual_result_rationale.md` or `assumed_result_explanation.md`. Virtual-result status is recorded in Markdown reports and source ledgers, not repeated in every paragraph, table, or figure legend.
 
-**中文：** 当用户要求虚拟或假设阳性结果时，除非用户已经固定结果轴，否则先做一轮简洁的文献和公共数据可行性调研；选择最可能成立的阳性结果轴，再据此生成结果包，并保存 `virtual_result_rationale.md` 或 `assumed_result_explanation.md`。虚拟结果状态只记录在 Markdown 报告和来源账本中，不在每段正文、每个表格或每条图注里反复标注。
+**中文：** 当用户要求虚拟或假设阳性结果时，除非用户已经固定结果轴，否则先做一轮简洁的文献、公共数据可行性和创新性扫描；选择既高度可能成立、又最有创新性，且在已扫描文献中未见直接同构研究的结果轴；在 `virtual_result_rationale.md` 或 `assumed_result_explanation.md` 中记录最接近既往工作、创新性差异和剩余不确定性。虚拟结果状态只记录在 Markdown 报告和来源账本中，不在每段正文、每个表格或每条图注里反复标注。
 
 ## When To Use / 什么时候使用
 
@@ -119,7 +119,7 @@ Use $co-manager
 
 Topic seed: macrophage metabolism and osteoarthritis
 Goal: 先调用 co-search 检索近两年文献并分类；我选择一类后，再调用 co-distill 蒸馏文章套路，调用 co-topic 生成可复刻套路的新课题，调用 co-plan 给出公共数据集、生信分析计划和实验计划。每一轮都保存报告、表格和必要图片/图片提示。最后根据真实或我明确要求的虚拟结果调用 co-result、co-method、co-discussion，并拼成全文。
-Output defaults: 每一步 Markdown 默认中文；full_manuscript.md 只给一个中文全文；虚拟结果前先调研文献和公共数据可行性、选择最可能阳性结果轴并保存解释文件；图片生成可用时生成 Figure PNG。
+Output defaults: 每一步 Markdown 默认中文；full_manuscript.md 只给一个中文全文；虚拟结果前先调研文献、公共数据可行性和创新性，选择既可能成立又最创新、未见直接同构研究的阳性结果轴并保存解释文件；图片生成可用时生成 Figure PNG。
 ```
 
 ## Recommended Test Prompt / 推荐测试 Prompt

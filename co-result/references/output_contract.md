@@ -8,7 +8,7 @@ For a full co-result task, create a folder named from the project or figure topi
 <project>_results/
   <project>_results_section.md
   result_source_ledger.md
-  virtual_result_rationale.md           # virtual or assumed-positive rationale when applicable
+  virtual_result_rationale.md           # virtual or assumed-positive plausibility and novelty rationale when applicable
   figure_generation_prompts.md
   figure_generation_blockers.md         # only when image generation is unavailable or blocked
   raw_data_requirements_summary.md
@@ -31,7 +31,7 @@ The main Markdown file should contain:
 
 1. Title.
 2. Result source note: input, assumed, simulated, or requirements-only.
-3. Virtual or assumed-result rationale note, when applicable.
+3. Virtual or assumed-result rationale note, when applicable, including closest prior work, novelty gap, and why the chosen result axis is not a direct repeat.
 4. `## Results`.
 5. Subheaded Results paragraphs with in-text figure panel indexing.
 6. Embedded figure image links.

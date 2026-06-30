@@ -68,7 +68,7 @@ Stop for user choice unless the user explicitly says to continue automatically.
 1. After `$co-search`: choose one literature class / 在 `$co-search` 后选择一个文献类别。
 2. After `$co-topic`: choose one main topic or request revision / 在 `$co-topic` 后选择主课题或要求重写。
 3. After every `$co-plan` round: choose public-data analysis, experiment, or virtual-result simulation / 每轮 `$co-plan` 后选择公共数据分析、实验或虚拟结果模拟。
-4. Before `$co-result` generates virtual positive results, confirm the literature/public-data feasibility rationale and the selected most plausible positive result axis / `$co-result` 生成虚拟阳性结果前，确认文献/公共数据可行性解释和最可能成立的阳性结果轴。
+4. Before `$co-result` generates virtual positive results, confirm the literature/public-data feasibility and novelty rationale, the closest prior work, and the selected positive result axis that is both plausible and maximally innovative / `$co-result` 生成虚拟阳性结果前，确认文献/公共数据可行性和创新性解释、最接近既往工作，以及既可能成立又最有创新性的阳性结果轴。
 5. Before final manuscript assembly, confirm the source ledger exists for any simulation-only major claim / 组装全文前，确认任何仅基于模拟的重要 claim 都已有来源账本记录。
 
 ## Round Logic / 迭代逻辑
@@ -98,8 +98,8 @@ Never force a positive narrative when a result is neutral or contradictory.
 Keep simulation status in project reports and source ledgers even when manuscript-facing prose is written in conventional Results style.  
 即使论文正文按常规 Results 风格书写，也要在项目报告和来源账本中保留模拟结果状态。
 
-Before manuscript assembly, if any major claim uses `virtual_positive_results` or `assumed_results`, require `virtual_result_rationale.md` or `assumed_result_explanation.md` describing the literature search, public-data feasibility check, selected plausible result axis, and remaining uncertainty.  
-组装全文前，如果任何主要 claim 使用 `virtual_positive_results` 或 `assumed_results`，必须有 `virtual_result_rationale.md` 或 `assumed_result_explanation.md`，说明文献调研、公共数据可行性检查、所选最可能阳性结果轴和剩余不确定性。
+Before manuscript assembly, if any major claim uses `virtual_positive_results` or `assumed_results`, require `virtual_result_rationale.md` or `assumed_result_explanation.md` describing the literature search, public-data feasibility check, novelty scan, closest prior work, selected plausible-and-innovative result axis, why it is not a direct repeat, and remaining uncertainty.  
+组装全文前，如果任何主要 claim 使用 `virtual_positive_results` 或 `assumed_results`，必须有 `virtual_result_rationale.md` 或 `assumed_result_explanation.md`，说明文献调研、公共数据可行性检查、创新性扫描、最接近既往工作、所选既可能成立又有创新性的结果轴、为什么不是直接重复，以及剩余不确定性。
 
 ## Required Outputs / 必要输出
 

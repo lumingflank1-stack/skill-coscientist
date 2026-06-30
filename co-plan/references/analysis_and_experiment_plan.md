@@ -64,9 +64,9 @@ Download status values:
 
 Use only when the user explicitly wants simulated or virtual results.
 
-Before writing this prompt, perform or require a compact literature/public-data feasibility review unless the user has fixed the result axis. Select the most plausible positive result axis and save the reasoning in `virtual_result_rationale.md` or `assumed_result_explanation.md`.
+Before writing this prompt, perform or require a compact literature/public-data feasibility and novelty scan unless the user has fixed the result axis. Select the positive result axis that is both highly plausible and maximally innovative, with no directly equivalent prior study found in the scanned literature. Save the reasoning in `virtual_result_rationale.md` or `assumed_result_explanation.md`.
 
-只有用户明确要求虚拟或模拟结果时才使用本模板。撰写 prompt 前，除非用户已经固定结果轴，否则先做或要求一轮简洁的文献/公共数据可行性调研；选择最可能成立的阳性结果轴，并将理由保存到 `virtual_result_rationale.md` 或 `assumed_result_explanation.md`。
+只有用户明确要求虚拟或模拟结果时才使用本模板。撰写 prompt 前，除非用户已经固定结果轴，否则先做或要求一轮简洁的文献/公共数据可行性和创新性扫描；选择既高度可能成立、又最有创新性，且在已扫描文献中未见直接同构研究的阳性结果轴，并将理由保存到 `virtual_result_rationale.md` 或 `assumed_result_explanation.md`。
 
 ```markdown
 # Virtual Result Prompt
@@ -85,7 +85,7 @@ Required figure summaries:
 Constraints:
 Output format:
 Source-status requirement: record virtual status in the report or source ledger; do not repeat labels in every table, figure caption, or result paragraph unless requested.
-Rationale requirement: save a separate rationale file explaining the literature search, public-data feasibility check, selected most plausible positive result axis, and remaining uncertainty.
+Rationale requirement: save a separate rationale file explaining the literature search, public-data feasibility check, novelty scan, closest prior work, selected plausible-and-innovative positive result axis, why it is not a direct repeat, and remaining uncertainty.
 ```
 
 ## Decision Rules

@@ -52,7 +52,7 @@ Evidence types:
 
 Use `allowed_in_manuscript=draft_with_source_note` for virtual results when the manuscript-facing prose should read like a conventional paper draft, and keep the virtual status in `source_mode_ledger.csv` or the Markdown report.
 
-For any virtual or assumed-positive major claim, save `virtual_result_rationale.md` or `assumed_result_explanation.md` before final assembly. The rationale file should summarize the literature search, public-data feasibility check, selected most plausible positive result axis, and remaining uncertainty.
+For any virtual or assumed-positive major claim, save `virtual_result_rationale.md` or `assumed_result_explanation.md` before final assembly. The rationale file should summarize the literature search, public-data feasibility check, novelty scan, closest prior work, selected plausible-and-innovative positive result axis, why it is not a direct repeat, and remaining uncertainty.
 
 默认情况下，`manuscript/full_manuscript.md` 只输出中文全文；除非用户明确要求，不生成英文或中英双语版本。
 
@@ -77,5 +77,5 @@ For any virtual or assumed-positive major claim, save `virtual_result_rationale.
 - Discussion addresses rival explanations and boundaries.
 - References are numbered consistently.
 - Virtual results are recorded in state files, source ledgers, or final notes even when manuscript-facing prose uses conventional Results style.
-- Virtual or assumed-positive major claims have a rationale/explanation file before manuscript assembly.
+- Virtual or assumed-positive major claims have a rationale/explanation file before manuscript assembly, including closest prior work and novelty difference from direct repeats.
 - `full_manuscript.md` is a single Chinese manuscript unless another language was explicitly requested.

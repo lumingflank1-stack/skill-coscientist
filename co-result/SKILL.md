@@ -75,8 +75,8 @@ Virtual results are allowed only when the user explicitly asks for them.
 
 In virtual mode / 在虚拟模式下：
 
-- **EN:** Before generating virtual results, perform a compact literature and public-data feasibility review unless the user provides a fixed result axis. Choose the most plausible positive result axis from that review, not a generic placeholder, and save an explanation file such as `virtual_result_rationale.md` or `assumed_result_explanation.md`.  
-  **中：** 生成虚拟结果前，除非用户已经指定固定结果轴，否则先做一轮简洁的文献和公共数据可行性调研。根据调研选择最可能成立的阳性结果轴，不使用泛泛占位物，并保存 `virtual_result_rationale.md` 或 `assumed_result_explanation.md` 等解释文件。
+- **EN:** Before generating virtual results, perform a compact literature, public-data feasibility, and novelty scan unless the user provides a fixed result axis. Choose the positive result axis that is both highly plausible and maximally innovative, with no directly equivalent prior study found in the scanned literature. Do not use a generic placeholder. Save an explanation file such as `virtual_result_rationale.md` or `assumed_result_explanation.md` that lists the closest prior work, why the selected axis is different, and what remains uncertain.  
+  **中：** 生成虚拟结果前，除非用户已经指定固定结果轴，否则先做一轮简洁的文献、公共数据可行性和创新性扫描。选择既高度可能成立、又最有创新性，且在已扫描文献中未见直接同构研究的阳性结果轴；不使用泛泛占位物。保存 `virtual_result_rationale.md` 或 `assumed_result_explanation.md` 等解释文件，列出最接近的既往工作、所选结果轴的新意差异，以及仍不确定的地方。
 - **EN:** Record virtual-result status once in the Markdown source note and `result_source_ledger.md`.  
   **中：** 只在 Markdown 来源说明和 `result_source_ledger.md` 中记录虚拟结果状态。
 - **EN:** Follow the user's requested direction, assays, groups, variance, and output format.  
@@ -94,7 +94,7 @@ For a full request, save / 完整任务需保存：
 
 - `*_results_section.md`: Results, legends, image links, source notes / 结果、图注、图片链接和来源说明。
 - `result_source_ledger.md`: panel-level source mode map / panel 级来源模式表。
-- `virtual_result_rationale.md` or `assumed_result_explanation.md`: literature/data rationale for virtual or assumed positive results / 虚拟或假设阳性结果的文献与数据可行性解释。
+- `virtual_result_rationale.md` or `assumed_result_explanation.md`: literature/data/novelty rationale for virtual or assumed positive results, including closest prior work and difference from directly equivalent studies / 虚拟或假设阳性结果的文献、数据和创新性解释，包括最接近既往工作及与直接同构研究的差异。
 - `figures/Figure_*.png`: generated planning or manuscript figures by default when image generation is available / 图片生成可用时默认生成的规划图或论文图。
 - `figure_generation_prompts.md`: prompts for figures / 图片生成 prompt。
 - `figure_generation_blockers.md`: why bitmap figures were not generated, if generation is unavailable or blocked / 图片生成不可用或受阻时的原因说明。

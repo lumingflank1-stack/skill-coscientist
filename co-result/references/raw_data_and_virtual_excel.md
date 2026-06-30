@@ -39,7 +39,7 @@ Every simulated workbook must:
 
 - avoid repeated simulated-status labels inside data tables, figure maps, or figure legends;
 - rely on the accompanying Markdown report and `result_source_ledger.md` for source-mode disclosure;
-- link to `virtual_result_rationale.md` or `assumed_result_explanation.md`, which explains the literature/public-data basis for choosing the most plausible positive result axis;
+- link to `virtual_result_rationale.md` or `assumed_result_explanation.md`, which explains the literature/public-data/novelty basis for choosing the most plausible and innovative positive result axis, including closest prior work and why it is not a direct repeat;
 - use four decimal places for numeric outputs unless the user asks otherwise;
 - preserve reasonable within-group variance;
 - avoid impossible values, such as negative concentrations or negative normalized intensities;
