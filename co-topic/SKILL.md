@@ -11,8 +11,8 @@ description: Generate and rank biomedical research topics from a distilled paper
 
 **中文：** 从蒸馏出的文章套路中生成可检验的生物医学课题。把共同科学家循环应用到选题：生成、反驳、排序、验证设计、修正和转化表达。
 
-Default to Chinese reports unless the user requests another language.  
-除非用户要求其他语言，报告默认使用中文。
+Default to Chinese reports unless the user requests another language. Generated Markdown reports should be Chinese-only by default; do not create bilingual project reports unless explicitly requested.  
+除非用户要求其他语言，报告默认使用中文。生成的 Markdown 报告默认只写中文；除非用户明确要求，不生成中英双语项目报告。
 
 ## Inputs / 输入
 

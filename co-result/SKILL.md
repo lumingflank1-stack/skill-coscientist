@@ -11,8 +11,8 @@ description: Draft Chinese biomedical or life-science manuscript Results section
 
 **中文：** 将实验设计、真实结果、部分结果或用户明确要求的虚拟结果转化为紧凑的论文 Results 包：结果正文、图版索引、图片提示或图片、图注、原始数据需求和可选虚拟 Excel 表。
 
-Default to Chinese biomedical manuscript style unless the user requests another language.  
-除非用户要求其他语言，默认使用中文生物医学论文风格。
+Default to Chinese biomedical manuscript style unless the user requests another language. All generated Markdown reports, Results drafts, figure legends, source notes, and manuscript inputs should be Chinese-only by default; do not create bilingual Chinese-English project reports unless explicitly requested.  
+除非用户要求其他语言，默认使用中文生物医学论文风格。所有生成的 Markdown 报告、Results 草稿、图注、来源说明和全文输入默认只写中文；除非用户明确要求，不生成中英双语项目报告。
 
 ## Result Source Modes / 结果来源模式
 
@@ -40,8 +40,8 @@ If virtual/simulated results are not explicitly requested, do not invent positiv
    **中：** 用 `(Figure 1A)`、`(Figure 1A-D)` 等方式在正文中索引图版。
 4. **EN:** Write figure legends after Results and distinguish schematic, representative image, quantification, and statistical panels.  
    **中：** Results 后写图注，并区分示意图、代表图、定量图和统计图。
-5. **EN:** If image generation is requested, use the `imagegen` skill to generate one complete multi-panel bitmap per figure and save it in the workspace.  
-   **中：** 如果用户要求生成图片，使用 `imagegen` skill 为每个独立 Figure 生成完整多 panel bitmap，并保存到项目目录。
+5. **EN:** For full Results packages, virtual-result packages, assumed-result manuscript packages, or `$co-manager` manuscript assembly, call the available image generation path (`imagegen` / GPT Image 2 when available) by default to create at least planning-grade complete multi-panel bitmap figures and save them in the workspace. If image generation is unavailable, blocked, or the user asks for text only, save `figure_generation_prompts.md` plus `figure_generation_blockers.md`.  
+   **中：** 对完整 Results 包、虚拟结果包、假设结果全文包或 `$co-manager` 全文组装，默认调用可用图片生成路径（可用时使用 `imagegen` / GPT Image 2）生成至少规划级完整 multi-panel 位图，并保存到项目目录。如果图片生成不可用、受阻，或用户要求只输出文字，则保存 `figure_generation_prompts.md` 和 `figure_generation_blockers.md`。
 6. **EN:** Identify raw-data requirements for every claim and panel.  
    **中：** 为每个 claim 和 panel 标出原始数据需求。
 7. **EN:** Generate virtual data only in `virtual_positive_results` mode or when the user explicitly asks for a virtual workbook. Record simulation status only in Markdown report and `result_source_ledger.md`; do not mark every result paragraph, table row, sheet, numeric block, or figure legend as simulated.  
@@ -75,6 +75,8 @@ Virtual results are allowed only when the user explicitly asks for them.
 
 In virtual mode / 在虚拟模式下：
 
+- **EN:** Before generating virtual results, perform a compact literature and public-data feasibility review unless the user provides a fixed result axis. Choose the most plausible positive result axis from that review, not a generic placeholder, and save an explanation file such as `virtual_result_rationale.md` or `assumed_result_explanation.md`.  
+  **中：** 生成虚拟结果前，除非用户已经指定固定结果轴，否则先做一轮简洁的文献和公共数据可行性调研。根据调研选择最可能成立的阳性结果轴，不使用泛泛占位物，并保存 `virtual_result_rationale.md` 或 `assumed_result_explanation.md` 等解释文件。
 - **EN:** Record virtual-result status once in the Markdown source note and `result_source_ledger.md`.  
   **中：** 只在 Markdown 来源说明和 `result_source_ledger.md` 中记录虚拟结果状态。
 - **EN:** Follow the user's requested direction, assays, groups, variance, and output format.  
@@ -92,8 +94,10 @@ For a full request, save / 完整任务需保存：
 
 - `*_results_section.md`: Results, legends, image links, source notes / 结果、图注、图片链接和来源说明。
 - `result_source_ledger.md`: panel-level source mode map / panel 级来源模式表。
-- `figures/Figure_*.png`: generated figures when requested / 用户要求时生成的图片。
+- `virtual_result_rationale.md` or `assumed_result_explanation.md`: literature/data rationale for virtual or assumed positive results / 虚拟或假设阳性结果的文献与数据可行性解释。
+- `figures/Figure_*.png`: generated planning or manuscript figures by default when image generation is available / 图片生成可用时默认生成的规划图或论文图。
 - `figure_generation_prompts.md`: prompts for figures / 图片生成 prompt。
+- `figure_generation_blockers.md`: why bitmap figures were not generated, if generation is unavailable or blocked / 图片生成不可用或受阻时的原因说明。
 - `raw_data_requirements_summary.md`: raw-data requirement map / 原始数据需求表。
 - `*_virtual_raw_data.xlsx`: virtual workbook only when explicitly requested / 仅在明确要求时生成虚拟 workbook。
 

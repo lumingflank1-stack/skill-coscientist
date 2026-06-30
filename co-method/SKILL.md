@@ -11,8 +11,8 @@ description: Draft concise Chinese biomedical, clinical, or life-science manuscr
 
 **中文：** 将 Methods 写成简洁的可复现文档，而不是叙事总结。先根据摘要和结果反推需要的方法模块，再从用户文件或网络来源核对具体实验细节。
 
-Default to concise Chinese manuscript prose unless the user requests another language.  
-除非用户要求其他语言，默认使用精简中文论文正文。
+Default to concise Chinese manuscript prose unless the user requests another language. Generated Markdown reports and manuscript inputs should be Chinese-only by default; do not create bilingual project reports unless explicitly requested.  
+除非用户要求其他语言，默认使用精简中文论文正文。生成的 Markdown 报告和全文输入默认只写中文；除非用户明确要求，不生成中英双语项目报告。
 
 Default output / 默认输出：
 

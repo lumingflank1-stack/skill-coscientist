@@ -78,7 +78,8 @@ def main() -> None:
     write_text(out / "decision_log.md", "# Decision Log\n")
     write_csv(out / "evidence_ledger.csv", EVIDENCE_COLUMNS)
     write_csv(out / "source_mode_ledger.csv", SOURCE_MODE_COLUMNS)
-    write_text(out / "manuscript" / "full_manuscript.md", "# Full Manuscript Draft\n")
+    write_text(out / "manuscript" / "virtual_result_rationale.md", "# 虚拟或假设结果解释\n\n如本项目使用虚拟或假设阳性结果，在此记录文献调研、公共数据可行性、所选最可能阳性结果轴和剩余不确定性。\n")
+    write_text(out / "manuscript" / "full_manuscript.md", "# 中文全文初稿\n")
 
     print(f"Created Co-Manager project workspace: {out}")
 

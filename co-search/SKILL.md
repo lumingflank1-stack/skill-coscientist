@@ -11,8 +11,8 @@ description: Search, screen, classify, and summarize biomedical literature into 
 
 **中文：** 检索、筛选、分类并总结生物医学文献，让用户选择一个研究类别，供后续文章套路蒸馏使用。
 
-Default to Chinese reports unless the user asks otherwise.  
-除非用户另有要求，报告默认使用中文。
+Default to Chinese reports unless the user asks otherwise. Generated Markdown reports should be Chinese-only by default; do not create bilingual project reports unless explicitly requested.  
+除非用户另有要求，报告默认使用中文。生成的 Markdown 报告默认只写中文；除非用户明确要求，不生成中英双语项目报告。
 
 ## Search Rules / 检索规则
 

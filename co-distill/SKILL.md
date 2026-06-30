@@ -11,8 +11,8 @@ description: Distill biomedical papers into reusable research routines, figure l
 
 **中文：** 将选定文献类别转化为可复用的研究套路。蒸馏文章结构、证据阶梯、数据策略和图版逻辑，但不要机械复制原始生物学主题。
 
-Default to Chinese reports unless the user requests another language.  
-除非用户要求其他语言，报告默认使用中文。
+Default to Chinese reports unless the user requests another language. Generated Markdown reports should be Chinese-only by default; do not create bilingual project reports unless explicitly requested.  
+除非用户要求其他语言，报告默认使用中文。生成的 Markdown 报告默认只写中文；除非用户明确要求，不生成中英双语项目报告。
 
 ## Inputs / 输入
 

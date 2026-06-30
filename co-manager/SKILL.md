@@ -11,8 +11,8 @@ description: Orchestrate an interactive biomedical paper co-scientist workflow f
 
 **中文：** 运行有状态、互动式的“研究到论文”工作流。Co-Manager 是外层总控：负责调用专门 skill、保留证据来源、在用户决策点暂停，并为每个阶段保存报告文件。
 
-Default to Chinese for user-facing reports unless the user requests another language.  
-除非用户要求其他语言，面向用户的报告默认使用中文。
+Default to Chinese for user-facing reports unless the user requests another language. Stage Markdown reports and `manuscript/full_manuscript.md` should be Chinese-only by default; do not create parallel English or bilingual versions unless explicitly requested.  
+除非用户要求其他语言，面向用户的报告默认使用中文。阶段性 Markdown 报告和 `manuscript/full_manuscript.md` 默认只写中文；除非用户明确要求，不创建英文或中英双语版本。
 
 ## Core Principle / 核心原则
 
@@ -68,7 +68,7 @@ Stop for user choice unless the user explicitly says to continue automatically.
 1. After `$co-search`: choose one literature class / 在 `$co-search` 后选择一个文献类别。
 2. After `$co-topic`: choose one main topic or request revision / 在 `$co-topic` 后选择主课题或要求重写。
 3. After every `$co-plan` round: choose public-data analysis, experiment, or virtual-result simulation / 每轮 `$co-plan` 后选择公共数据分析、实验或虚拟结果模拟。
-4. Before `$co-result` generates virtual positive results / `$co-result` 生成虚拟阳性结果前。
+4. Before `$co-result` generates virtual positive results, confirm the literature/public-data feasibility rationale and the selected most plausible positive result axis / `$co-result` 生成虚拟阳性结果前，确认文献/公共数据可行性解释和最可能成立的阳性结果轴。
 5. Before final manuscript assembly, confirm the source ledger exists for any simulation-only major claim / 组装全文前，确认任何仅基于模拟的重要 claim 都已有来源账本记录。
 
 ## Round Logic / 迭代逻辑
@@ -92,16 +92,20 @@ Never force a positive narrative when a result is neutral or contradictory.
 1. `$co-result`: `manuscript/results.md`, legends, figure prompts/images, raw-data needs, source notes / 结果、图注、图片提示或图片、原始数据需求和来源说明。
 2. `$co-method`: `manuscript/methods.md` from final Results / 基于最终 Results 撰写 Methods。
 3. `$co-discussion`: `manuscript/introduction.md`, `manuscript/discussion.md`, numbered references / 撰写引言、讨论和编号参考文献。
-4. `manuscript/full_manuscript.md`: title placeholder, abstract placeholder, Introduction, Results, Discussion, Methods, References, figure legends / 标题占位、摘要占位、引言、结果、讨论、方法、参考文献和图注。
+4. `manuscript/full_manuscript.md`: one Chinese full manuscript by default, including title placeholder, abstract placeholder, Introduction, Results, Discussion, Methods, References, and figure legends / 默认只生成一个中文全文，包括标题占位、摘要占位、引言、结果、讨论、方法、参考文献和图注。
+5. `manuscript/figures/Figure_*.png`: generated planning or manuscript figures when image generation is available; otherwise save figure prompts and blockers / 图片生成可用时保存规划图或论文图；否则保存图片 prompt 和阻断说明。
 
 Keep simulation status in project reports and source ledgers even when manuscript-facing prose is written in conventional Results style.  
 即使论文正文按常规 Results 风格书写，也要在项目报告和来源账本中保留模拟结果状态。
 
+Before manuscript assembly, if any major claim uses `virtual_positive_results` or `assumed_results`, require `virtual_result_rationale.md` or `assumed_result_explanation.md` describing the literature search, public-data feasibility check, selected plausible result axis, and remaining uncertainty.  
+组装全文前，如果任何主要 claim 使用 `virtual_positive_results` 或 `assumed_results`，必须有 `virtual_result_rationale.md` 或 `assumed_result_explanation.md`，说明文献调研、公共数据可行性检查、所选最可能阳性结果轴和剩余不确定性。
+
 ## Required Outputs / 必要输出
 
-**English:** Every stage must save a Markdown report. Tables should be CSV or TSV. Figures should be PNG when generated; otherwise save `figure_prompts.md`.
+**English:** Every stage must save a Chinese Markdown report by default. Tables should be CSV or TSV. Figures should be PNG when generated; otherwise save `figure_prompts.md` and `figure_generation_blockers.md`.
 
-**中文：** 每个阶段都必须保存 Markdown 报告。表格使用 CSV 或 TSV。生成图片时保存 PNG；没有实际图片时保存 `figure_prompts.md`。
+**中文：** 每个阶段默认都必须保存中文 Markdown 报告。表格使用 CSV 或 TSV。生成图片时保存 PNG；没有实际图片时保存 `figure_prompts.md` 和 `figure_generation_blockers.md`。
 
 Default folders / 默认目录：
 

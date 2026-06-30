@@ -44,6 +44,20 @@ co-search -> user selects class -> co-distill -> co-topic -> user selects topic
 -> co-discussion -> full manuscript
 ```
 
+## Default Output Rules / 默认输出规则
+
+**English:** Unless the user explicitly requests English or bilingual output, every stage Markdown report in `co-paper skills` should be Chinese-only. The final `manuscript/full_manuscript.md` should be one Chinese full manuscript by default, not parallel Chinese and English versions.
+
+**中文：** 除非用户明确要求英文或中英双语，`co-paper skills` 每一步生成的 Markdown 报告默认只写中文。最终 `manuscript/full_manuscript.md` 默认只生成一个中文全文，不生成中英双语或中英文两套版本。
+
+**English:** For full Results packages, virtual-result packages, assumed-result manuscript packages, and `$co-manager` full-manuscript assembly, `$co-result` should call the available image generation path (`imagegen` / GPT Image 2 when available) by default to save complete multi-panel PNG figures. If generation is unavailable or blocked, save `figure_generation_prompts.md` and `figure_generation_blockers.md`.
+
+**中文：** 对完整 Results 包、虚拟结果包、假设结果全文包和 `$co-manager` 全文组装，`$co-result` 默认调用可用图片生成路径（可用时使用 `imagegen` / GPT Image 2）生成完整 multi-panel PNG 图。若图片生成不可用或受阻，则保存 `figure_generation_prompts.md` 和 `figure_generation_blockers.md`。
+
+**English:** When virtual or assumed positive results are requested, first perform a compact literature and public-data feasibility review unless the user fixes the result axis. Choose the most plausible positive result axis, generate the result package from that axis, and save `virtual_result_rationale.md` or `assumed_result_explanation.md`. Virtual-result status is recorded in Markdown reports and source ledgers, not repeated in every paragraph, table, or figure legend.
+
+**中文：** 当用户要求虚拟或假设阳性结果时，除非用户已经固定结果轴，否则先做一轮简洁的文献和公共数据可行性调研；选择最可能成立的阳性结果轴，再据此生成结果包，并保存 `virtual_result_rationale.md` 或 `assumed_result_explanation.md`。虚拟结果状态只记录在 Markdown 报告和来源账本中，不在每段正文、每个表格或每条图注里反复标注。
+
 ## When To Use / 什么时候使用
 
 **English:** Use this skill when you want Codex to:
@@ -105,6 +119,7 @@ Use $co-manager
 
 Topic seed: macrophage metabolism and osteoarthritis
 Goal: 先调用 co-search 检索近两年文献并分类；我选择一类后，再调用 co-distill 蒸馏文章套路，调用 co-topic 生成可复刻套路的新课题，调用 co-plan 给出公共数据集、生信分析计划和实验计划。每一轮都保存报告、表格和必要图片/图片提示。最后根据真实或我明确要求的虚拟结果调用 co-result、co-method、co-discussion，并拼成全文。
+Output defaults: 每一步 Markdown 默认中文；full_manuscript.md 只给一个中文全文；虚拟结果前先调研文献和公共数据可行性、选择最可能阳性结果轴并保存解释文件；图片生成可用时生成 Figure PNG。
 ```
 
 ## Recommended Test Prompt / 推荐测试 Prompt

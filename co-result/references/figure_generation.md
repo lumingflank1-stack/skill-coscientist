@@ -2,16 +2,25 @@
 
 ## When to Use
 
-Use this guide when the user asks to call ChatGPT image generation, produce `Figure 1`-style complete figure montages, or write prompts for figure images.
+Use this guide when the user asks to call ChatGPT image generation, when `$co-result` is producing a full Results package, when virtual or assumed results are being prepared for manuscript drafting, when `$co-manager` is assembling a full manuscript, or when prompts for figure images are needed.
+
+用户要求调用图片生成、`$co-result` 生成完整 Results 包、虚拟或假设结果进入论文撰写、`$co-manager` 组装全文，或需要图片 prompt 时，都使用本指南。
 
 ## Execution
 
-Use the `imagegen` skill and the built-in ChatGPT image generation path by default. Generate one complete bitmap per independent figure:
+Use the available ChatGPT image generation path by default (`imagegen` / GPT Image 2 when available). Generate one complete bitmap per independent figure:
 
 - `figures/Figure_1_<short_topic>.png`
 - `figures/Figure_2_<short_topic>.png`
 
 Do not leave project-referenced images only in the default generated-images directory. Copy final selected images into the project workspace.
+
+When the image generation path is unavailable, blocked, or the user requests text-only output, save both:
+
+- `figure_generation_prompts.md`
+- `figure_generation_blockers.md`
+
+Do not silently downgrade full manuscript or virtual-result packages to prompt-only output.
 
 ## Prompt Structure
 

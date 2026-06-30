@@ -11,8 +11,8 @@ description: Research literature and draft numbered-citation Introduction and Di
 
 **中文：** 在 Results 稳定后撰写论文 Introduction 和 Discussion。先调研并映射文献，再用编号引用撰写正文。
 
-Default to Chinese manuscript prose unless the user requests English.  
-除非用户要求英文，默认使用中文论文正文。
+Default to Chinese manuscript prose unless the user requests English or another language. Generated Markdown reports, Introduction, Discussion, and manuscript inputs should be Chinese-only by default; do not create bilingual project reports unless explicitly requested.  
+除非用户要求英文或其他语言，默认使用中文论文正文。生成的 Markdown 报告、Introduction、Discussion 和全文输入默认只写中文；除非用户明确要求，不生成中英双语项目报告。
 
 ## Required Inputs / 必要输入
 
